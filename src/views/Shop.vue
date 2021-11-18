@@ -39,21 +39,17 @@ export default {
   height: 100%;
   .swiper {
     width: 100%;
-    height: 100px;
+    height: 110px;
     position: relative;
+    background: url("../assets/images/bg.jpeg") no-repeat center;
+    background-size: cover;
 
     .address {
       position: absolute;
       top: 20px;
       right: 10px;
       z-index: 20;
-    }
-    .my-swipe .van-swipe-item {
-      color: #fff;
-      font-size: 20px;
-      line-height: 150px;
-      text-align: center;
-      background-color: #39a9ed;
+      color: #ffffff;
     }
   }
   .content {
@@ -68,7 +64,7 @@ export default {
     &::-webkit-scrollbar {
       display: none; /* Chrome Safari */
     }
-    padding-bottom: 50px;
+    padding-bottom: 60px;
     & >.search {
       width: 70%;
       display: flex;

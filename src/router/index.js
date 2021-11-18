@@ -28,6 +28,24 @@ const routes = [
     ]
   },
   {
+    path: '/deliver',
+    name: 'deliver',
+    component: () => import('../views/deliver.vue'),
+    redirect:'/dlList',
+    children:[
+      {
+        path: '/dlList',
+        name: 'dlList',
+        component: () => import('../views/dlList.vue')
+      },
+      {
+        path: '/dlInfo',
+        name: 'dlInfo',
+        component: () => import('../views/dlInfo.vue')
+      },
+    ]
+  },
+  {
     path: '/addressList',
     name: 'addressList',
     component: () => import('../views/addressList.vue')
@@ -38,17 +56,41 @@ const routes = [
     component: () => import('../views/shopCart.vue')
   },
   {
+    path: '/userSetting',
+    name: 'userSetting',
+    component: () => import('../views/userSetting.vue')
+  },
+  {
     path: '/shopInfo',
     name: 'shopInfo',
     component: () => import('../views/shopInfo.vue')
-  }
-
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue')
+  },
 ]
+
+
 
 const router = new VueRouter({
   mode:'history',
   base:'/takeOutFood',
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+  //to表示要访问的路径  from表示从那个路径来   next函数表示放行
+  // if (to.path === "/login") return next();
+  // //获取token
+  // const token = window.sessionStorage.getItem("token");
+  // if (!token) {
+  //   window.sessionStorage.removeItem("active")
+  //   window.sessionStorage.removeItem("id")
+  //   return next("./login");
+  // }
+  // next();
+// });
 
 export default router
